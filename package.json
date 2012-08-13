@@ -1,0 +1,28 @@
+{
+  "name": "wiki-check",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "author": "Michael Nowack <syranez@minaga-church.de> (https://github.com/syranez)",
+  "license": "MIT",
+  "description": "Hi,",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:syranez/wiki-checks.git"
+  },
+  "keywords": [
+    "wiki",
+    "check"
+  ],
+  "dependencies": {
+    "request": "~2.10.0"
+  },
+  "devDependencies": {
+    "tap": "~0.3.0"
+  }
+}
