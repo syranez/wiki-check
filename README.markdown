@@ -10,7 +10,34 @@ A node module which checks if a wiki has an entry.
 
 `npm install -g wiki-check`
 
-## Using
+## Usage
+
+    var wikiCheck = request("wiki-check");
+
+    wikiCheck.hasEntry({
+        "wiki": "http://de.wikipedia.org/wiki/",
+        "name": "some entry"
+    }, function (error, entry) {
+
+        if (error) {
+            console.error("Upps: " + error.msg);
+            return;
+        }
+
+        if (entry) {
+            console.info("There is some entry!");
+        } else {
+            console.info("There is NO entry. /o\");
+        }
+    });
+
+### API
+
+#### __hasEntry__(entry, callback)
+
+Checks if `entry.name` has an entry on Wiki `entry.wiki`. `entry.name` will be sanitized in Wiki-Notation, e. g. "some entry" becomes "Some_Entry". `entry.wiki`has to be an URL to a Wiki, e. g. "http://en.wikipedia.org/wiki/", watch the trailing slash.  
+`callback` is a function with an error object as first parameter. That object has only one property: `error.msg`. The second parameter is a boolean: `true` if an entry exists, `false`otherwise.
+
 
 ## Version scheme
 
