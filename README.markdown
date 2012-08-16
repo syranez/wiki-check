@@ -2,6 +2,8 @@
 
 A node module which checks if a wiki has an entry.
 
+[![build status](https://secure.travis-ci.org/syranez/wiki-check.png)](http://travis-ci.org/syranez/wiki-check)
+
 ## Installation
 
 `npm install wiki-check`
