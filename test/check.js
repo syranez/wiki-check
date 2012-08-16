@@ -19,11 +19,7 @@ test("Peter Young has an entry", function (t) {
         "name": "peter young"
     }, function (error, entry) {
         t.ok(entry, "peter young");
-        t.end();
     });
-});
-
-test("unknown foobar has no entry", function (t) {
     check({
         "wiki": "http://de.wikipedia.org/wiki/",
         "name": "unknown foobar"
