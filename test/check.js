@@ -28,7 +28,7 @@ test("unknown foobar has no entry", function (t) {
         "wiki": "http://de.wikipedia.org/wiki/",
         "name": "unknown foobar"
     }, function (error, entry) {
-        t.notOk(entry, "unknown foobar");
+        t.ok(!entry, "unknown foobar");
         t.end();
     });
 });
