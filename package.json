@@ -10,7 +10,7 @@
   },
   "author": "Michael Nowack <syranez@minaga-church.de> (https://github.com/syranez)",
   "license": "MIT",
-  "description": "Hi,",
+  "description": "Checks if a wiki has an entry.",
   "repository": {
     "type": "git",
     "url": "git@github.com:syranez/wiki-checks.git"
