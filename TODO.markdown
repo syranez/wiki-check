@@ -1,3 +1,3 @@
 # Todos
 
-* publish
+* nothing to do \o/
