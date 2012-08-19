@@ -1,29 +1,6 @@
 /**
  * rapedia-check checks if an artist has a wiki entry on rapedia.de
  *
- * API:
- *
- *     hasEntry(object: entry, callback):boolean
- *
- *        where entry is an object with
- *
- *             {
- *                 "wiki": <string>,
- *                 "name": <string>
- *             }
- *
- *        e. g. 
- *
- *             {
- *                 "wiki": "http://de.wikipedia.org/wiki/",
- *                 "name": "nodejs"
- *             }
- *
- *        and callback is
- *
- *            function (object:error, boolean: entry)
- *
- *        and error has a msg property.
  */
 var check = require("./lib/check.js");
 

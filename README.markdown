@@ -26,10 +26,10 @@ A node module which checks if a wiki has an entry.
             return;
         }
 
-        if (entry) {
-            console.info("There is some entry!");
+        if (entry.status) {
+            console.info("There is this entry: " + entry.uri);
         } else {
-            console.info("There is NO entry. /o\");
+            console.info("There is NO entry. /o\ (HTTP status code: " + entry.code);
         }
     });
 
@@ -38,8 +38,16 @@ A node module which checks if a wiki has an entry.
 #### __hasEntry__(entry, callback)
 
 Checks if `entry.name` has an entry on Wiki `entry.wiki`. `entry.name` will be sanitized in Wiki-Notation, e. g. "some entry" becomes "Some_Entry". `entry.wiki`has to be an URL to a Wiki, e. g. "http://en.wikipedia.org/wiki/", watch the trailing slash.  
-`callback` is a function with an error object as first parameter. That object has only one property: `error.msg`. The second parameter is a boolean: `true` if an entry exists, `false`otherwise.
+`callback` is a function with an error object as first parameter. That object has only one property: `error.msg`. The second parameter is this:
 
+        {
+            // boolean value of an entry exists.
+            "status": <boolean>,
+            // HTTP status code of the request.
+            "code":   <number>,
+            // URI to the entry.
+            "uri":    <string>
+        }
 
 ## Version scheme
 

@@ -2,29 +2,36 @@ var test  = require("tap").test;
 var check = require("../").hasEntry;
 
 test("Peter Young has an entry", function (t) {
+
+    var wiki = "http://de.wikipedia.org/wiki/";
+
     check({
-        "wiki": "http://de.wikipedia.org/wiki/",
+        "wiki": wiki,
         "name": "Peter Young"
     }, function (error, entry) {
-        t.ok(entry, "Peter Young");
+        t.ok(entry.status, "Peter Young" + entry.code);
+        t.same(entry.uri, wiki + "Peter_Young");
     });
     check({
-        "wiki": "http://de.wikipedia.org/wiki/",
+        "wiki": wiki,
         "name": "peter Young"
     }, function (error, entry) {
-        t.ok(entry, "peter Young");
+        t.ok(entry.status, "peter Young");
+        t.same(entry.uri, wiki + "Peter_Young");
     });
     check({
-        "wiki": "http://de.wikipedia.org/wiki/",
+        "wiki": wiki,
         "name": "peter young"
     }, function (error, entry) {
-        t.ok(entry, "peter young");
+        t.ok(entry.status, "peter young");
+        t.same(entry.uri, wiki + "Peter_Young");
     });
     check({
-        "wiki": "http://de.wikipedia.org/wiki/",
+        "wiki": wiki,
         "name": "unknown foobar"
     }, function (error, entry) {
-        t.ok(!entry, "unknown foobar");
+        t.ok(!entry.status, "unknown foobar");
+        t.same(entry.uri, null);
         t.end();
     });
 });
